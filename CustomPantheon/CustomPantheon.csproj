@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\1.5Moddingapi\Assembly-CSharp.dll</HintPath>
+	  <Private>false</Private>
+    </Reference>
+    <Reference Include="PlayMaker">
+      <HintPath>..\..\1.5Moddingapi\PlayMaker.dll</HintPath>
+		<Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\1.5Moddingapi\UnityEngine.dll</HintPath>
+		<Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\1.5Moddingapi\UnityEngine.CoreModule.dll</HintPath>
+		<Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
