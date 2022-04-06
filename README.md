@@ -12,5 +12,5 @@ Compatible with `Hollow Knight` 1.5.
     "GG_Sly"
   ]
 ```
-(Write the scenename you want)You can use BenchWarp to see room name or use [this](SceneName.txt)
+(Write the scenename you want)You can use BenchWarp to see room name or use [SceneName.txt](SceneName.txt)
 
