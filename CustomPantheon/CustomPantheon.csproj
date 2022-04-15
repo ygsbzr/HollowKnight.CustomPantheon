@@ -14,6 +14,12 @@
       <HintPath>..\..\1.5Moddingapi\Assembly-CSharp.dll</HintPath>
 	  <Private>false</Private>
     </Reference>
+    <Reference Include="MMHOOK_Assembly-CSharp">
+      <HintPath>..\..\1.5Moddingapi\MMHOOK_Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_PlayMaker">
+      <HintPath>..\..\1.5Moddingapi\MMHOOK_PlayMaker.dll</HintPath>
+    </Reference>
     <Reference Include="PlayMaker">
       <HintPath>..\..\1.5Moddingapi\PlayMaker.dll</HintPath>
 		<Private>false</Private>
@@ -25,6 +31,9 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\1.5Moddingapi\UnityEngine.CoreModule.dll</HintPath>
 		<Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\1.5Moddingapi\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
