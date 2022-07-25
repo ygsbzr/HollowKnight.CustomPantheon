@@ -3,10 +3,13 @@ using System.Reflection;
 using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using GlobalEnums;
 namespace CustomPantheon
 {
     public partial class CustomPantheon:Mod,IGlobalSettings<Setting>,ITogglableMod
     {
+		private List<string> scenes = new List<string> { "GG_Hollow_Knight", "GG_Radiance", "GG_Grimm_Nightmare" };
 		public static Setting gs = new Setting();
 		public bool isCustom = false;
         public override string GetVersion()
@@ -30,6 +33,18 @@ namespace CustomPantheon
             ModHooks.GetPlayerVariableHook += ChangeCustomDoorVar;
             On.PlayMakerFSM.Start += ModifyRadiance;
             On.BossSequenceController.SetupNewSequence += BossSequenceController_SetupNewSequence;
+            On.BossSceneController.Start += CheckHUD;
+        }
+
+        private IEnumerator CheckHUD(On.BossSceneController.orig_Start orig, BossSceneController self)
+        {
+			//from HUDInChecker
+			yield return orig(self);
+			if(BossSequenceController.IsInSequence&&!scenes.Contains(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name))
+            {
+				yield return new WaitUntil(() => GameManager.instance.gameState == GameState.PLAYING);
+				GameCameras.instance.hudCanvas.LocateMyFSM("Slide Out").SendEvent("IN");
+			}
         }
 
         private void BossSequenceController_SetupNewSequence(On.BossSequenceController.orig_SetupNewSequence orig, BossSequence sequence, BossSequenceController.ChallengeBindings bindings, string playerData)
@@ -109,6 +124,10 @@ namespace CustomPantheon
 			UnityEngine.SceneManagement.SceneManager.activeSceneChanged -= AddDoor;
 			ModHooks.LanguageGetHook -= ChangeDoorText;
 			ModHooks.GetPlayerVariableHook -= ChangeCustomDoorVar;
+			On.PlayMakerFSM.Start -= ModifyRadiance;
+			On.BossSequenceController.SetupNewSequence -= BossSequenceController_SetupNewSequence;
+			On.BossSceneController.Start -= CheckHUD;
 		}
+	
 	}
 }

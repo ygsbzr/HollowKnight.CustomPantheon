@@ -51,4 +51,10 @@
 "GG_Mage_Knight"(Soul Warrior Attuned),
 "GG_Mage_Knight_V"(Soul Warrior Ascended),
 "GG_Radiance"(Absolute Radiance),
-"GG_Grey_Prince_Zote"(Grey Prince Zote)
+"GG_Grey_Prince_Zote"(Grey Prince Zote)，
+"GG_Spa"(Spring)
+"GG_Unn",
+"GG_Wyrm",
+"GG_Engine",
+"GG_Engine_Prime",
+"GG_Engine_Root",
