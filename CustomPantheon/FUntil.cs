@@ -102,6 +102,7 @@ namespace CustomPantheon
         public static void AddAction(this FsmState fsmstate, FsmStateAction action)
         {
             fsmstate.Actions= fsmstate.Actions.Add(action).ToArray();
+            action.Init(fsmstate);
         }
         public static void AddAction(this PlayMakerFSM fsm,string statename, FsmStateAction action)
         {
